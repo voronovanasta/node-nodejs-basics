@@ -11,7 +11,6 @@ const create = async () => {
     
 try {
     if (existsSync(filePath)){
-        console.log('The path exists.');//
         throw new Error('FS operation failed');
     }
     await appendFile(filePath, 'I am fresh and young')

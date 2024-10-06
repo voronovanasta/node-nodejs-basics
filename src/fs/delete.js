@@ -12,7 +12,6 @@ const remove = async () => {
         await rm(fileToDeletePath)
     }
     catch(err) {
-        console.log(err)
         throw new Error("FS operation failed")
     }
 };
