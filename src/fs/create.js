@@ -3,11 +3,11 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { existsSync } from 'node:fs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirName = dirname(filename);
 
 const create = async () => {
-    const filePath = join(__dirname, 'files', 'fresh.txt'); 
+    const filePath = join(dirName, 'files', 'fresh.txt'); 
     
 try {
     if (existsSync(filePath)){
