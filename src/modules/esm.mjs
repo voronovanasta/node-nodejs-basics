@@ -6,7 +6,6 @@ import { createServer as createServerHttp } from 'http';
 import('./files/c.js');
 
 const random = Math.random();
-console.log(random)
 
 export let unknownObject;
 
@@ -15,13 +14,12 @@ export let unknownObject;
         unknownObject = await import('./files/a.json',{
             with: { type: "json" },
           })
-          console.log(unknownObject);
     } else {
         unknownObject = await import('./files/b.json',{
             with: { type: "json" },
           })
-          console.log(unknownObject);
     }
+    console.log(unknownObject);
 })()
     
 

@@ -15,12 +15,8 @@ const performCalculations = async () => {
         let data = null;
 
         worker.on('message', msg => {
-            if (msg.error) {
-                result.push({data, status: 'error'})
-            } else {
-                data = msg;
-                result.push({data, status: 'resolved'})
-            }
+            data = msg;
+            result.push({data, status: 'resolved'})
         })
 
         worker.on('error', error => {
